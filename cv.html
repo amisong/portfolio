@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ami Song — CV</title>
+<style>
+  html, body { margin: 0; padding: 0; background: #525659; min-height: 100%; }
+  #pages { padding: 20px 0 40px; }
+  #pages canvas {
+    display: block; margin: 0 auto 18px; max-width: calc(100% - 24px);
+    height: auto; box-shadow: 0 2px 18px rgba(0,0,0,0.35); border-radius: 2px;
+  }
+  #msg {
+    color: #fff; text-align: center; padding: 48px 24px;
+    font-family: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif; font-size: 15px;
+  }
+  #msg a { color: #fff; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div id="pages"></div>
+  <div id="msg">Loading CV…</div>
+  <script src="https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.min.js"></script>
+  <script>
+    (function () {
+      var msg = document.getElementById('msg');
+      var pagesEl = document.getElementById('pages');
+      var PDF = '/AmiSong_CV.pdf';
+      function fail() { msg.innerHTML = 'Could not preview the CV here. <a href="' + PDF + '">Open the PDF &rarr;</a>'; msg.style.display = 'block'; }
+      if (!window.pdfjsLib) { fail(); return; }
+      pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdn.jsdelivr.net/npm/pdfjs-dist@3.11.174/build/pdf.worker.min.js';
+      var dpr = Math.min(window.devicePixelRatio || 1, 2);
+      pdfjsLib.getDocument(PDF).promise.then(function (pdf) {
+        msg.style.display = 'none';
+        var chain = Promise.resolve();
+        for (var i = 1; i <= pdf.numPages; i++) {
+          (function (n) {
+            chain = chain.then(function () {
+              return pdf.getPage(n).then(function (page) {
+                var vp = page.getViewport({ scale: 1.5 * dpr });
+                var canvas = document.createElement('canvas');
+                canvas.width = vp.width; canvas.height = vp.height;
+                canvas.style.width = (vp.width / dpr) + 'px';
+                pagesEl.appendChild(canvas);
+                return page.render({ canvasContext: canvas.getContext('2d'), viewport: vp }).promise;
+              });
+            });
+          })(i);
+        }
+      }).catch(fail);
+    })();
+  </script>
+</body>
+</html>
