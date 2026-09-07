@@ -23,7 +23,7 @@
 .cs-card, .cs-card * { box-shadow: none !important; }
 .cs-card > *:hover { transform: none !important; }
 .cs-card > .sc-host-x > div, .cs-card > .sc-host-x > div:hover { transform: none !important; }
-.cs-card > .sc-host-x > div{background:var(--surface-fill) !important;border-radius:30px !important;}[style*="var(--radius-full)"]{padding-top:5px !important;padding-bottom:5px !important;}[style*="border-left"][style*="var(--ink-200)"]+[style*="border-radius"]{margin-top:24px !important;}.case-hero h1{font-size:40px !important;line-height:1.12 !important;}@media (max-width:768px){.hero-title h1{font-size:34px !important;line-height:1.1 !important;}.cs-card [style*="grid-template-columns"]{grid-template-columns:1fr !important;gap:40px !important;}.cs-card [style*="padding-left"]{padding-left:0 !important;}.cs-card [style*="padding-right"]{padding-right:0 !important;}.cs-card [style*="grid-template-columns"] > div{order:2 !important;}.cs-card [style*="grid-template-columns"] > div:has(img){order:1 !important;}.cs-card [style*="aspect-ratio"]{aspect-ratio:auto !important;}.cs-card img[src*="cover-usd"]{width:90% !important;height:auto !important;}.cs-card [style*="justify-content: flex-end"]{justify-content:center !important;}.cs-card img[src*="cover-credit"]{width:100% !important;height:auto !important;margin-right:0 !important;}.cs-card [style*="linear-gradient"]{display:none !important;}.cs-card > .sc-host-x > div{padding-top:40px !important;padding-bottom:56px !important;}.intro-sec{padding:48px 20px 44px !important;}.case-hero{padding:48px 20px 44px !important;}.case-hero h1{font-size:30px !important;}[style*="grid-template-columns"]{grid-template-columns:1fr !important;}}
+.cs-card > .sc-host-x > div{background:var(--surface-fill) !important;border-radius:30px !important;}[style*="border-left"][style*="var(--ink-200)"]+[style*="border-radius"]{margin-top:24px !important;}.case-hero h1{font-size:40px !important;line-height:1.12 !important;}@media (max-width:768px){.hero-title h1{font-size:34px !important;line-height:1.1 !important;}.cs-card [style*="grid-template-columns"]{grid-template-columns:1fr !important;gap:40px !important;}.cs-card [style*="padding-left"]{padding-left:0 !important;}.cs-card [style*="padding-right"]{padding-right:0 !important;}.cs-card [style*="grid-template-columns"] > div{order:2 !important;}.cs-card [style*="grid-template-columns"] > div:has(img){order:1 !important;}.cs-card [style*="aspect-ratio"]{aspect-ratio:auto !important;}.cs-card img[src*="cover-usd"]{width:90% !important;height:auto !important;}.cs-card [style*="justify-content: flex-end"]{justify-content:center !important;}.cs-card img[src*="cover-credit"]{width:100% !important;height:auto !important;margin-right:0 !important;}.cs-card [style*="linear-gradient"]{display:none !important;}.cs-card > .sc-host-x > div{padding-top:40px !important;padding-bottom:56px !important;}.intro-sec{padding:48px 20px 44px !important;}.case-hero{padding:48px 20px 44px !important;}.case-hero h1{font-size:30px !important;}[style*="grid-template-columns"]{grid-template-columns:1fr !important;}}
 </style>
 </head>
 <body>
@@ -1461,19 +1461,19 @@ hr {
       
 
       <div class="cs-card"><x-import component-from-global-scope="DesignSystem_9448c5.Card" interactive="{{ true }}" padding="lg" sc-camel-on-click="{{ goCase }}" hint-size="100%,440px">
-        <div style="display:grid;grid-template-columns:0.8fr 1.35fr;gap:48px;align-items:center;">
+        <div style="display:grid;grid-template-columns:0.9fr 1.35fr;gap:48px;align-items:center;">
           <div style="aspect-ratio:622 / 650;border-radius:var(--radius-xl);overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--surface-fill);order:2;">
             <img src="/assets/cover-usd.png" alt="Toss Bank multi-currency account" style="width:72%;height:72%;object-fit:contain;object-position:center;">
           </div>
           <div style="display:flex;flex-direction:column;gap:14px;padding-left:60px;">
             <x-import component-from-global-scope="DesignSystem_9448c5.Heading" level="3" hint-size="auto,40px">Designing End-to-End Multi-Currency Account</x-import>
-            <p style="font-size:var(--text-xs);line-height:1.6;font-weight:var(--weight-medium);color:var(--ink-700);margin:0;text-wrap:pretty;">An account to exchange and spend multiple currencies with no exchange fees.</p>
+            <p style="font-size:14px;line-height:1.4;font-weight:var(--weight-medium);color:var(--ink-700);margin:0;text-wrap:pretty;">An account to exchange and spend multiple currencies with no exchange fees.</p>
             <div style="display:flex;gap:12px 8px;flex-wrap:wrap;margin:6px 0;">
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="110px,22px">User research</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="150px,22px">Competitor analysis</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="130px,22px">Value proposition</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="130px,22px">Usability testing</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="150px,22px">Promotion strategy</x-import>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">User research</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">Competitor analysis</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">Value proposition</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">Usability testing</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">Promotion strategy</span>
             </div>
             <div style="margin-top:20px;">
               <x-import component-from-global-scope="DesignSystem_9448c5.Button" size="md" variant="primary" sc-camel-on-click="{{ goCase }}" hint-size="160px,44px">View case study →</x-import>
@@ -1489,13 +1489,13 @@ hr {
           </div>
           <div style="display:flex;flex-direction:column;gap:14px;padding-right:76px;">
             <x-import component-from-global-scope="DesignSystem_9448c5.Heading" level="3" hint-size="auto,40px">Redesigning the Business Credit Score Dashboard</x-import>
-            <p style="font-size:var(--text-xs);line-height:1.6;font-weight:var(--weight-medium);color:var(--ink-700);margin:0;text-wrap:pretty;">A dashboard with monitoring built in, so businesses can see at a glance which factors affected their credit score.</p>
+            <p style="font-size:14px;line-height:1.4;font-weight:var(--weight-medium);color:var(--ink-700);margin:0;text-wrap:pretty;">A dashboard with monitoring built in, so businesses can see at a glance which factors affected their credit score.</p>
             <div style="display:flex;gap:12px 8px;flex-wrap:wrap;margin:6px 0;">
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="130px,22px">User research</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="150px,22px">Competitor analysis</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="130px,22px">Design workshop</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="130px,22px">AI prototyping</x-import>
-              <x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="150px,22px">Usability testing</x-import>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">User research</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">Competitor analysis</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">Design workshop</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">AI prototyping</span>
+              <span style="font-size:11px;font-weight:var(--weight-medium);color:var(--text-secondary);background:#fff;border-radius:var(--radius-full);padding:8px 12px;line-height:1;">Usability testing</span>
             </div>
             <div style="margin-top:20px;">
               <x-import component-from-global-scope="DesignSystem_9448c5.Button" size="md" variant="primary" sc-camel-on-click="{{ goCase2 }}" hint-size="160px,44px">View case study →</x-import>
