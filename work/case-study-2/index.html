@@ -3,13 +3,13 @@
 <head>
   <meta charset="utf-8">
   <title>Case study — Credit Score Dashboard · Amisong</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=2">
-  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png?v=2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=2">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg?v=3">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png?v=3">
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body { background: #12151a; display: flex; align-items: center; justify-content: center; min-height: 100vh; font-family: -apple-system, BlinkMacSystemFont, sans-serif; }
-    #__bundler_loading { position: fixed; bottom: 20px; right: 20px; font: 13px/1.4 -apple-system, BlinkMacSystemFont, sans-serif; color: #666; background: #fff; padding: 8px 14px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0,0,0,0.12); z-index: 10000; }
+    #__bundler_loading { display: none; }
     #__bundler_thumbnail { position: fixed; inset: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; background: #12151a; z-index: 9999; }
     #__bundler_thumbnail svg { width: 100%; height: 100%; object-fit: contain; }
     #__bundler_placeholder { color: #999; font-size: 14px; }
@@ -20,20 +20,7 @@
       This page requires JavaScript to display.
     </div>
   </noscript>
-  <script id="ami-loader">
-  (function(){
-    var start=Date.now(), hidden=false, keep;
-    var CSS="#ami-loader-ov{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;background:#12151a;transition:opacity .35s ease}#ami-loader-ov.hide{opacity:0;pointer-events:none}#ami-loader-ov .a{position:relative;font-family:ui-sans-serif,system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;font-weight:800;font-size:3.5vmin;line-height:1;letter-spacing:-.02em;white-space:nowrap}#ami-loader-ov .a .b{color:#262b33}#ami-loader-ov .a .f{position:absolute;left:0;top:0;color:#ffffff;clip-path:inset(100% 0 0 0)}@keyframes amiFill{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}";
-    function ensureStyle(){ if(!document.getElementById('ami-loader-css')){ var st=document.createElement('style'); st.id='ami-loader-css'; st.textContent=CSS; (document.head||document.documentElement).appendChild(st);} }
-    function build(){ if(hidden) return null; ensureStyle(); var d=document.getElementById('ami-loader-ov'); if(!d){ d=document.createElement('div'); d.id='ami-loader-ov'; d.innerHTML='<div class="a"><span class="b">Ami Song</span><span class="f">Ami Song</span></div>'; document.documentElement.appendChild(d);} var f=d.querySelector('.f'); if(f){ var pr=Math.min(1,(Date.now()-start)/800); f.style.clipPath='inset('+((1-pr)*100).toFixed(1)+'% 0 0 0)'; } return d; }
-    build();
-    keep=setInterval(build,16);
-    function hide(){ if(hidden) return; hidden=true; clearInterval(keep); var d=document.getElementById('ami-loader-ov'); if(d){ d.classList.add('hide'); setTimeout(function(){ if(d.parentNode) d.parentNode.removeChild(d); },400);} }
-    function whenReady(){ setTimeout(hide, Math.max(0, 800-(Date.now()-start))); }
-    if(document.readyState==='complete') whenReady(); else window.addEventListener('load', whenReady);
-    setTimeout(hide, 2500);
-  })();
-  </script>
+  <script>window._amiLoaderStart=Date.now();</script>
   <script id="cs2-video-fix">
   (function(){
     function fix(){
@@ -47,7 +34,7 @@
   </script>
 </head>
 <body>
-  <div id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#12151a"></rect><text x="50" y="60" font-family="sans-serif" font-size="42" font-weight="bold" fill="#ffffff" text-anchor="middle">CC</text></svg></div>
+  <div id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><rect width="100" height="100" fill="#12151a"></rect></svg></div>
   <div id="__bundler_loading">Unpacking...</div>
 
   <script>
@@ -187,7 +174,22 @@ document.addEventListener('DOMContentLoaded', async function() {
     // createElement so they execute, awaiting onload for src scripts to
     // preserve ordering (React before ReactDOM before Babel before text/babel).
     const doc = new DOMParser().parseFromString(template, 'text/html');
+    var _loaderStart = window._amiLoaderStart || Date.now();
     document.documentElement.replaceWith(doc.documentElement);
+    (function(){
+      var css = document.getElementById('ami-loader-css');
+      if (!css) {
+        css = document.createElement('style'); css.id = 'ami-loader-css';
+        css.textContent = '#ami-loader-ov{position:fixed;inset:0;z-index:2147483647;display:flex;align-items:center;justify-content:center;background:#12151a;transition:opacity .35s ease}#ami-loader-ov.hide{opacity:0;pointer-events:none}#ami-loader-ov .a{position:relative;font-family:ui-sans-serif,system-ui,-apple-system,\"Segoe UI\",Roboto,sans-serif;font-weight:800;font-size:3.5vmin;line-height:1;letter-spacing:-.02em;white-space:nowrap}#ami-loader-ov .a .b{color:#262b33}#ami-loader-ov .a .f{position:absolute;left:0;top:0;color:#ffffff;clip-path:inset(100% 0 0 0);animation:amiFill .7s ease-out forwards}@keyframes amiFill{from{clip-path:inset(100% 0 0 0)}to{clip-path:inset(0 0 0 0)}}';
+        (document.head || document.documentElement).appendChild(css);
+      }
+      var ov = document.createElement('div'); ov.id = 'ami-loader-ov';
+      ov.innerHTML = '<div class="a"><span class="b">Ami Song</span><span class="f">Ami Song</span></div>';
+      document.documentElement.appendChild(ov);
+      function hide(){ ov.classList.add('hide'); setTimeout(function(){ if(ov.parentNode) ov.parentNode.removeChild(ov); }, 400); }
+      setTimeout(hide, Math.max(0, 700 - (Date.now() - _loaderStart)));
+      setTimeout(hide, 1200);
+    })();
     const dead = Array.from(document.scripts);
     for (const old of dead) {
       const s = document.createElement('script');
