@@ -24,6 +24,14 @@
 .cs-card > *:hover { transform: none !important; }
 .cs-card > .sc-host-x > div, .cs-card > .sc-host-x > div:hover { transform: none !important; }
 .cs-card > .sc-host-x > div{background:var(--surface-fill) !important;border-radius:30px !important;}[style*="border-left"][style*="var(--ink-200)"]+[style*="border-radius"]{margin-top:24px !important;}.case-hero h1{font-size:var(--text-title) !important;line-height:1.12 !important;font-weight:var(--weight-semibold) !important;}@media (max-width:768px){.hero-title h1{font-size:var(--text-subtitle) !important;line-height:1.1 !important;}.cs-card [style*="grid-template-columns"]{grid-template-columns:1fr !important;gap:40px !important;}.cs-card [style*="padding-left"]{padding-left:0 !important;}.cs-card [style*="padding-right"]{padding-right:0 !important;}.cs-card [style*="grid-template-columns"] > div{order:2 !important;}.cs-card [style*="grid-template-columns"] > div:has(img){order:1 !important;}.cs-card [style*="aspect-ratio"]{aspect-ratio:auto !important;}.cs-card img[src*="cover-usd"]{width:90% !important;height:auto !important;}.cs-card [style*="justify-content: flex-end"]{justify-content:center !important;}.cs-card img[src*="cover-credit"]{width:100% !important;height:auto !important;margin-right:0 !important;}.cs-card [style*="linear-gradient"]{display:none !important;}.cs-card > .sc-host-x > div{padding-top:40px !important;padding-bottom:56px !important;}.intro-sec{padding:48px 20px 44px !important;}.case-hero{padding:48px 20px 44px !important;}.case-hero h1{font-size:var(--text-subtitle) !important;}[style*="grid-template-columns"]{grid-template-columns:1fr !important;}}
+@keyframes insightGlow {
+  0%   { box-shadow: 0 0 0 1.5px rgba(0,100,255,0.35), 0 0 24px rgba(0,100,255,0.1); }
+  50%  { box-shadow: 0 0 0 1px rgba(0,100,255,0.15), 0 0 12px rgba(0,100,255,0.05); }
+  100% { box-shadow: 0 0 0 0px rgba(0,100,255,0), 0 0 0px rgba(0,100,255,0); }
+}
+.insight-highlight { animation: insightGlow 2s ease-out; border-radius: 16px; }
+.insight-back-btn { position:fixed;bottom:24px;right:24px;z-index:1000;padding:10px 18px;background:var(--ink-900);color:#fff;font-size:var(--text-sm);font-weight:var(--weight-semibold);border:none;border-radius:12px;cursor:pointer;box-shadow:0 2px 12px rgba(0,0,0,0.15);opacity:0;transform:translateY(8px);transition:opacity 0.25s ease,transform 0.25s ease;pointer-events:none;font-family:inherit; }
+.insight-back-btn.visible { opacity:1;transform:translateY(0);pointer-events:auto; }
 </style>
 </head>
 <body>
@@ -1629,7 +1637,7 @@ hr {
 
           <div id="insight-findings" style="scroll-margin-top:94px;display:flex;align-items:center;gap:8px;margin-top:64px;margin-bottom:-10px;"><span style="display:inline-flex;align-items:center;justify-content:center;flex:none;width:21px;height:21px;border-radius:var(--radius-full);border:1.75px solid var(--ink-950);color:var(--ink-950);font-size:var(--text-sm);font-weight:var(--weight-bold);line-height:1;">2</span><span style="font-size:var(--text-body);font-weight:var(--weight-semibold);color:var(--text-primary);">Findings</span></div>
           <!-- Finding 01 — Hero -->
-          <div style="display:grid;grid-template-columns:0.58fr 0.5fr;gap:110px;align-items:center;padding:40px 0;">
+          <div id="insight-fee" style="scroll-margin-top:94px;display:grid;grid-template-columns:0.58fr 0.5fr;gap:110px;align-items:center;padding:40px 0;">
             <img src="../../assets/findings.png" alt="User quotes about exchange fees" style="display:block;width:100%;height:auto;border-radius:16px;">
             <div style="display:flex;flex-direction:column;gap:16px;margin-top:-20px;max-width:450px;">
               <span style="display:inline-flex;align-items:center;justify-content:center;width:fit-content;padding:5px 12px;border-radius:20px;background:var(--ink-900);color:#ffffff;font-size:var(--text-sm);font-weight:var(--weight-bold);line-height:1;">01</span>
@@ -1736,7 +1744,7 @@ hr {
             <div style="display:flex;flex-direction:column;gap:8px;">
               <div style="font-size:var(--text-card-title);font-weight:var(--weight-bold);color:var(--text-primary);">Why FX traders?</div>
               <ul style="margin:0;padding-left:18px;display:flex;flex-direction:column;gap:2px;font-size:var(--text-xs);line-height:1.6;font-weight:var(--weight-medium);color:var(--ink-700);">
-                <li>Our interviews showed they switch services readily for a better fee.</li>
+                <li>Users readily switch when they find a service with better benefits.</li>
                 <li>This segment also travels, so it naturally covers the traveler segment too.</li>
                 <li>Toss Bank account transaction data showed 74.8% had invest-related activity and 59.1% travel-related, so targeting FX traders should raise the open rate.</li>
               </ul>
@@ -1966,9 +1974,9 @@ hr {
           <div style="display:flex;align-items:center;gap:8px;margin-top:112px;margin-bottom:-10px;"><span style="display:inline-flex;align-items:center;justify-content:center;flex:none;width:21px;height:21px;border-radius:var(--radius-full);border:1.75px solid var(--ink-950);color:var(--ink-950);font-size:var(--text-sm);font-weight:var(--weight-bold);line-height:1;">2</span><span style="font-size:var(--text-body);font-weight:var(--weight-semibold);color:var(--text-primary);">Exchange Process</span></div>
           <div style="display:flex;"><x-import component-from-global-scope="DesignSystem_9448c5.Badge" tone="neutral" size="sm" hint-size="150px,24px">Multi-Currency User</x-import><span style="flex:1;"></span></div>
           <div style="display:flex;flex-direction:column;gap:16px;border-left:2px solid var(--ink-200);padding-left:14px;margin-top:-20px;">
-            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;"><span style="flex:1 1 320px;font-size:var(--text-xs);line-height:1.35;font-weight:var(--weight-medium);color:var(--ink-700);"><span style="font-weight:var(--weight-semibold);color:var(--text-primary);">"No exchange fees" front and center.</span> I surfaced the value users care about most throughout the whole exchange flow.</span><a href="#insight-competitor" style="flex:none;font-size:var(--text-sm);font-weight:var(--weight-semibold);color:var(--text-primary);border-bottom:1px solid var(--border-strong);padding-bottom:1px;">Insight ↑</a></div>
-            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;"><span style="flex:1 1 320px;font-size:var(--text-xs);line-height:1.35;font-weight:var(--weight-medium);color:var(--ink-700);"><span style="font-weight:var(--weight-semibold);color:var(--text-primary);">Plain language, no jargon.</span> I replaced the hard terms competitors rely on with words anyone can understand.</span><a href="#challenge" style="flex:none;font-size:var(--text-sm);font-weight:var(--weight-semibold);color:var(--text-primary);border-bottom:1px solid var(--border-strong);padding-bottom:1px;">Insight ↑</a></div>
-            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;"><span style="flex:1 1 320px;font-size:var(--text-xs);line-height:1.35;font-weight:var(--weight-medium);color:var(--ink-700);"><span style="font-weight:var(--weight-semibold);color:var(--text-primary);">Post-exchange payoff.</span> After exchanging, a flip animation reveals what users check most — how much the rate moved and the amount converted back to KRW.</span><a href="#insight-findings" style="flex:none;font-size:var(--text-sm);font-weight:var(--weight-semibold);color:var(--text-primary);border-bottom:1px solid var(--border-strong);padding-bottom:1px;">Insight ↑</a></div>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;"><span style="flex:1 1 320px;font-size:var(--text-xs);line-height:1.35;font-weight:var(--weight-medium);color:var(--ink-700);"><span style="font-weight:var(--weight-semibold);color:var(--text-primary);">"No exchange fees" front and center.</span> I surfaced the value users care about most throughout the whole exchange flow.</span><a href="#insight-fee" style="flex:none;font-size:var(--text-sm);font-weight:var(--weight-semibold);color:var(--text-primary);border-bottom:1px solid var(--border-strong);padding-bottom:1px;">Insight ↑</a></div>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;"><span style="flex:1 1 320px;font-size:var(--text-xs);line-height:1.35;font-weight:var(--weight-medium);color:var(--ink-700);"><span style="font-weight:var(--weight-semibold);color:var(--text-primary);">Plain language, no jargon.</span> I replaced the hard terms competitors rely on with words anyone can understand.</span><a href="#insight-jargon" style="flex:none;font-size:var(--text-sm);font-weight:var(--weight-semibold);color:var(--text-primary);border-bottom:1px solid var(--border-strong);padding-bottom:1px;">Insight ↑</a></div>
+            <div style="display:flex;flex-wrap:wrap;align-items:baseline;gap:10px;"><span style="flex:1 1 320px;font-size:var(--text-xs);line-height:1.35;font-weight:var(--weight-medium);color:var(--ink-700);"><span style="font-weight:var(--weight-semibold);color:var(--text-primary);">Post-exchange payoff.</span> After exchanging, a flip animation reveals what users check most — how much the rate moved and the amount converted back to KRW.</span><a href="#insight-daily" style="flex:none;font-size:var(--text-sm);font-weight:var(--weight-semibold);color:var(--text-primary);border-bottom:1px solid var(--border-strong);padding-bottom:1px;">Insight ↑</a></div>
           </div>
           <div id="video-slot-2" style="border-radius:var(--radius-xl);overflow:hidden;margin-top:48px;margin-bottom:64px;max-width:260px;margin-left:auto;margin-right:auto;"></div>
           <div style="border-radius:var(--radius-xl);overflow:hidden;margin-bottom:48px;"><img src="850103f6-080e-48ad-8568-bff1f9afe6bc" alt="Exchange process flow" style="display:block;width:100%;height:auto;"></div>
@@ -2157,6 +2165,41 @@ class Component extends DCLogic {
     const obs = new IntersectionObserver((entries) => { entries.forEach(e => { const v = e.target; if (e.isIntersecting) { v.muted = true; v.loop = true; v.play().catch(() => {}); } else { v.pause(); } }); }, { threshold: 0.3 });
     const startObs = () => { document.querySelectorAll('video').forEach(v => { v.muted = true; v.loop = true; obs.observe(v); }); };
     setTimeout(startObs, 500); setTimeout(startObs, 2000);
+
+    let _ibBtn = null;
+    document.addEventListener('click', (e) => {
+      const a = e.target.closest('a[href^="#"]');
+      if (!a || !a.textContent.trim().startsWith('Insight')) return;
+      e.preventDefault();
+      const id = a.getAttribute('href').slice(1);
+      const target = document.getElementById(id);
+      if (!target) return;
+      let highlightEl = target;
+      let node = target.parentElement;
+      for (let i = 0; i < 5 && node && node !== document.body; i++) {
+        const cs = getComputedStyle(node);
+        const bg = cs.backgroundColor;
+        if (bg && bg !== 'rgba(0, 0, 0, 0)' && bg !== 'transparent' && parseFloat(cs.borderRadius) >= 12) { highlightEl = node; break; }
+        node = node.parentElement;
+      }
+      const prevY = window.scrollY;
+      target.scrollIntoView({ behavior: 'instant', block: 'center' });
+      requestAnimationFrame(() => {
+        highlightEl.classList.remove('insight-highlight');
+        void highlightEl.offsetWidth;
+        highlightEl.classList.add('insight-highlight');
+        highlightEl.addEventListener('animationend', () => highlightEl.classList.remove('insight-highlight'), { once: true });
+      });
+      if (!_ibBtn) {
+        _ibBtn = document.createElement('button');
+        _ibBtn.className = 'insight-back-btn';
+        _ibBtn.textContent = 'Back ↓';
+        document.body.appendChild(_ibBtn);
+        _ibBtn.addEventListener('click', () => { window.scrollTo({ top: _ibBtn._ry, behavior: 'instant' }); _ibBtn.classList.remove('visible'); });
+      }
+      _ibBtn._ry = prevY;
+      _ibBtn.classList.add('visible');
+    });
   }
   componentWillUnmount() {
     window.removeEventListener('scroll', this.updateRail);
@@ -2164,6 +2207,8 @@ class Component extends DCLogic {
   componentDidUpdate() {
     this.applyFont();
     this.updateRail();
+    clearTimeout(this._balTimer);
+    this._balTimer = setTimeout(this._syncBalanceLabels, 50);
   }
 
   PROTO = {
@@ -2232,6 +2277,23 @@ class Component extends DCLogic {
   onBuySelect = (f) => { if (f !== this.state.buyActive) this.setState({ buyActive: f, buyRaw: '' }); };
   onBuySwap = () => this.setState((s) => ({ buyActive: s.buyActive === 'usd' ? 'krw' : 'usd', buyRaw: '' }));
 
+  _syncBalanceLabels = () => {
+    const bv = this.buyValues();
+    const mode = bv.mode;
+    const krwOver = mode === 'buy' && bv.overKrw;
+    const usdOver = mode === 'sell' && bv.overUsd;
+    document.querySelectorAll('span').forEach(span => {
+      const t = span.textContent;
+      if (!t || !t.includes('・')) return;
+      if (t.includes('KRW')) {
+        const label = krwOver ? 'Insufficient' : 'Balance';
+        if (!t.startsWith(label)) span.textContent = t.replace(/^(Balance|Insufficient)/, label);
+      } else if (t.includes('USD')) {
+        const label = usdOver ? 'Insufficient' : 'Balance';
+        if (!t.startsWith(label)) span.textContent = t.replace(/^(Balance|Insufficient)/, label);
+      }
+    });
+  };
   renderVals() {
     const cur = this.state.proto || 's11';
     const proto = this.PROTO[cur];
